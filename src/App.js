@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Logo from './components/Logo';
 import Navigation from './components/Navigation';
+import Hero from './components/Hero';
 import UserProfile from './components/UserProfile';
+import TitleList from './components/TitleList';
 // css
 import './App.css';
 
@@ -22,7 +24,6 @@ class App extends Component {
     if(e.key === 'Enter' && this.state.searchTerm !== ''){
       let searchUrl = `search/multi?query=${this.state.searchTerm}&api_key=${this.apiKey}`;
       this.setState({searchUrl:searchUrl});
-      console.log(searchUrl);
     }
   }
 
@@ -47,6 +48,13 @@ class App extends Component {
           </div>
           <UserProfile />
         </header>
+        <Hero />
+        <TitleList title="Search Results" url={this.state.searchUrl} />
+        <TitleList title="Top TV picks for Jack" url='discover/tv?sort_by=popularity.desc&page=1' />
+        <TitleList title="Trending now" url='discover/movie?sort_by=popularity.desc&page=1' />
+        <TitleList title="Most watched in Horror" url='genre/27/movies?sort_by=popularity.desc&page=1' />
+        <TitleList title="Sci-Fi greats" url='genre/878/movies?sort_by=popularity.desc&page=1' />
+        <TitleList title="Comedy magic" url='genre/35/movies?sort_by=popularity.desc&page=1' />
       </div>
     );
   }

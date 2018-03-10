@@ -3,13 +3,12 @@ import React from 'react';
 class HeroButton extends React.Component {
   render(){
     return(
-      <a href='#' className='Button' data-primary={this.props.primary}>{this.props.text}</a>
+      <a href='' className='Button' data-primary={this.props.primary}>{this.props.text}</a>
     );
   }
 }
 
-
-export default class Hero extends React.Component {
+class Hero extends React.Component {
   render(){
     return(
       <div id="hero" className="Hero" style={{backgroundImage: 'url(https://images.alphacoders.com/633/633643.jpg)'}}>
@@ -27,3 +26,6 @@ export default class Hero extends React.Component {
     );
   }
 }
+
+
+export default Hero;
